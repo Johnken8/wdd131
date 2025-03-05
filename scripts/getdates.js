@@ -7,9 +7,18 @@ document.addEventListener("DOMContentLoaded", function() {
         currentYearElement.textContent = currentYear;
     }
 
-    // Set last modified date
+    // Set last modified date with improved formatting
     const lastModifiedElement = document.getElementById("lastModified");
     if (lastModifiedElement) {
-        lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
+        const lastModified = new Date(document.lastModified);
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        };
+        lastModifiedElement.textContent = `Last Modified: ${lastModified.toLocaleDateString('en-US', options)}`;
     }
 });
