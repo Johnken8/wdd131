@@ -1,0 +1,54 @@
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  /* Header and navigation changes */
+  #hamburger-menu {
+    display: none;
+  }
+  
+  nav {
+    display: block;
+    padding-top: 0.5rem;
+  }
+  
+  nav ul {
+    flex-direction: row;
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  nav a:hover, nav a.active {
+    padding-left: 1rem;
+    transform: translateX(0); /* Reset the mobile transform */
+  }
+  
+  /* Temple grid changes for larger screens */
+  .temple-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Increase main padding for larger screens */
+  main {
+    padding: 2rem;
+  }
+  
+  /* Larger heading for desktop */
+  h1 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+}
+
+/* For even larger screens */
+@media screen and (min-width: 1024px) {
+  .temple-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  figure:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}

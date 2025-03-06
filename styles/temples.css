@@ -1,0 +1,137 @@
+/* Google Fonts are already linked in the HTML */
+/* Base styles for mobile-first design */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+}
+
+/* Header styling */
+header {
+  background-color: #3a5683;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+#hamburger-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Navigation styling */
+nav {
+  display: none;
+  padding-top: 1rem;
+}
+
+nav.open {
+  display: block;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background-color: #4a6b9c;
+  padding-left: 0.5rem;
+  border-radius: 4px;
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* Main content styling */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #3a5683;
+  margin: 1rem 0 1.5rem;
+  text-align: center;
+}
+
+/* Temple grid styling */
+.temple-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+figure {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-5px);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+figcaption {
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #3a5683;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Footer styling */
+footer {
+  background-color: #3a5683;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
