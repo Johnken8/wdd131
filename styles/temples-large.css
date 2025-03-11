@@ -17,11 +17,18 @@
   nav a {
     padding: 0.5rem 1rem;
     margin-right: 0.5rem;
+    border-radius: 4px;
   }
   
   nav a:hover, nav a.active {
     padding-left: 1rem;
     transform: translateX(0); /* Reset the mobile transform */
+    background-color: #4a6b9c;
+  }
+  
+  nav a:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
   }
   
   /* Temple grid changes for larger screens */
@@ -50,5 +57,16 @@
   figure:hover {
     transform: translateY(-8px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Enhanced accessibility for large screens */
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

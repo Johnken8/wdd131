@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Toggle navigation when hamburger is clicked
     hamburgerButton.addEventListener('click', function() {
+        const isExpanded = mainNav.classList.contains('open');
         mainNav.classList.toggle('open');
+        
+        // Update aria-expanded state
+        hamburgerButton.setAttribute('aria-expanded', !isExpanded);
         
         // Change hamburger to X when open
         if (mainNav.classList.contains('open')) {
@@ -31,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mainNav.classList.remove('open');
             hamburgerButton.textContent = '≡';
             hamburgerButton.setAttribute('aria-label', 'Open menu');
+            hamburgerButton.setAttribute('aria-expanded', 'false');
         }
     });
 });
