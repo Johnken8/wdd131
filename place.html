@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria - Land of Diversity</title>
+    <meta name="description" content="Explore Nigeria, a country rich in culture, diversity, and natural beauty.">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/nigeria-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/nigeria-medium.webp" media="(min-width: 500px)">
+                <img src="images/nigeria-small.webp" alt="Beautiful Nigerian landscape showing lush green hills" width="1500" height="750">
+            </picture>
+        </div>
+
+        <section class="introduction">
+            <h2>Welcome to Nigeria</h2>
+            <p>Nigeria, officially the Federal Republic of Nigeria, is a country in West Africa. It is the most populous country in Africa and the seventh most populous country in the world. Nigeria has a diverse geography, with climates ranging from arid to humid equatorial.</p>
+            <p>Known as the "Giant of Africa," Nigeria is a multicultural society with over 250 ethnic groups speaking more than 500 distinct languages. The three largest ethnic groups are the Hausa, Yoruba, and Igbo.</p>
+        </section>
+
+        <div class="grid-container">
+            <section class="statistics">
+                <h2>Key Statistics</h2>
+                <ul>
+                    <li><strong>Capital:</strong> Abuja</li>
+                    <li><strong>Population:</strong> Over 200 million</li>
+                    <li><strong>Official Language:</strong> English</li>
+                    <li><strong>Currency:</strong> Nigerian Naira (₦)</li>
+                    <li><strong>Area:</strong> 923,768 sq km</li>
+                </ul>
+            </section>
+
+            <section class="weather">
+                <h2>Weather</h2>
+                <div class="weather-icon">
+                    <img src="images/sunny.svg" alt="Sunny weather icon" class="mobile-icon">
+                </div>
+                <div class="weather-info">
+                    <p><strong>Current Conditions:</strong> Sunny</p>
+                    <p><strong>Temperature:</strong> 28°C</p>
+                    <p><strong>Wind Speed:</strong> 10 km/h</p>
+                    <p><strong>Wind Chill:</strong> <span id="windchill">Calculating...</span></p>
+                </div>
+            </section>
+        </div>
+
+        <section class="attractions">
+            <h2>Popular Attractions</h2>
+            <div class="attractions-grid">
+                <div class="attraction">
+                    <h3>Zuma Rock</h3>
+                    <p>A massive monolith located in Niger State, near the capital Abuja. It's one of Nigeria's most recognizable natural landmarks.</p>
+                </div>
+                <div class="attraction">
+                    <h3>Lekki Conservation Centre</h3>
+                    <p>A nature reserve in Lagos with a canopy walkway, offering a unique perspective of the area's ecosystem.</p>
+                </div>
+                <div class="attraction">
+                    <h3>Yankari Game Reserve</h3>
+                    <p>Nigeria's richest wildlife reserve, home to elephants, baboons, waterbucks, and various bird species.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Chukwuebuka Johnkennedy Uche | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
