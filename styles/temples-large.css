@@ -46,6 +46,11 @@
     font-size: 2.5rem;
     margin: 1.5rem 0 2rem;
   }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin: 0 0 2rem;
+  }
 }
 
 /* For even larger screens */
