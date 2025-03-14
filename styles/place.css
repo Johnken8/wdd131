@@ -9,8 +9,8 @@
     --border-color: #dddddd;
     --border: 1px solid var(--border-color);
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --font-heading: 'Georgia', serif;
-    --font-body: 'Arial', sans-serif;
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
 }
 
 /* Base Styles */
