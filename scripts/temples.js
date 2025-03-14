@@ -38,4 +38,21 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburgerButton.setAttribute('aria-expanded', 'false');
         }
     });
+    
+    // Add event listeners to nav links for mobile view
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Set active class on clicked link
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Close menu in mobile view after link is clicked
+            if (window.innerWidth < 768) {
+                mainNav.classList.remove('open');
+                hamburgerButton.textContent = '≡';
+                hamburgerButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
 });

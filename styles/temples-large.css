@@ -23,12 +23,6 @@
   nav a:hover, nav a.active {
     padding-left: 1rem;
     transform: translateX(0); /* Reset the mobile transform */
-    background-color: #4a6b9c;
-  }
-  
-  nav a:focus {
-    outline: 2px solid #ffffff;
-    outline-offset: 2px;
   }
   
   /* Temple grid changes for larger screens */

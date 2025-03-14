@@ -1,5 +1,16 @@
-/* Google Fonts are already linked in the HTML */
+/* Google Fonts are already linked in the HTML */ 
 /* Base styles for mobile-first design */
+
+:root {
+  --primary-color: #3a5683;
+  --secondary-color: #4a6b9c;
+  --text-color: #333;
+  --background-color: #f8f8f8;
+  --white: #ffffff;
+  --shadow-small: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --transition-standard: all 0.3s ease;
+}
 
 * {
   margin: 0;
@@ -9,17 +20,17 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
 }
 
 /* Header styling */
 header {
-  background-color: #3a5683;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-small);
 }
 
 .header-content {
@@ -37,7 +48,7 @@ header {
 #hamburger-menu {
   background: none;
   border: none;
-  color: white;
+  color: var(--white);
   font-size: 2rem;
   cursor: pointer;
   padding: 0.25rem;
@@ -66,24 +77,24 @@ nav ul {
 
 nav a {
   display: block;
-  color: white;
+  color: var(--white);
   text-decoration: none;
   padding: 0.5rem 0;
   font-family: 'Montserrat', sans-serif;
-  transition: all 0.3s ease;
+  transition: var(--transition-standard);
 }
 
 nav a:hover, nav a.active {
-  background-color: #4a6b9c;
+  background-color: var(--secondary-color);
   padding-left: 0.5rem;
   border-radius: 4px;
-  color: #ffffff;
+  color: var(--white);
   transform: translateX(5px);
 }
 
 /* Focus states for accessibility */
 a:focus, button:focus {
-  outline: 2px solid #ffffff;
+  outline: 2px solid var(--white);
   outline-offset: 2px;
 }
 
@@ -96,14 +107,14 @@ main {
 
 h1 {
   font-family: 'Montserrat', sans-serif;
-  color: #3a5683;
+  color: var(--primary-color);
   margin: 1rem 0 1.5rem;
   text-align: center;
 }
 
 h2 {
   font-family: 'Montserrat', sans-serif;
-  color: #3a5683;
+  color: var(--primary-color);
   margin: 0 0 1.5rem;
   text-align: center;
   font-size: 1.2rem;
@@ -119,9 +130,9 @@ h2 {
 figure {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-small);
+  background-color: var(--white);
+  transition: var(--transition-standard);
 }
 
 figure:hover {
@@ -140,14 +151,14 @@ figcaption {
   padding: 0.8rem;
   text-align: center;
   font-weight: bold;
-  color: #3a5683;
+  color: var(--primary-color);
   font-family: 'Montserrat', sans-serif;
 }
 
 /* Footer styling */
 footer {
-  background-color: #3a5683;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
