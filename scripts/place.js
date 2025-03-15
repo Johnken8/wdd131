@@ -1,4 +1,4 @@
-// Function to calculate wind chill
+// Function to calculate wind chill - keeping as a single line return statement
 function calculateWindChill(temperature, windSpeed) {
     return 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16);
 }
@@ -9,9 +9,9 @@ function updateWindChill() {
     const windSpeed = 10; // Wind speed in km/h
     const windChillElement = document.getElementById('windchill');
     
-    // Check if wind chill conditions are met
+    // Check if wind chill conditions are met (for Celsius)
     if (temperature <= 10 && windSpeed > 4.8) {
-        // Calculate wind chill and display it
+        // Calculate wind chill and display it - only call the function if conditions are met
         const windChill = calculateWindChill(temperature, windSpeed);
         windChillElement.textContent = `${windChill.toFixed(1)}°C`;
     } else {
