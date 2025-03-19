@@ -10,6 +10,7 @@
   --shadow-small: 0 4px 8px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.15);
   --transition-standard: all 0.3s ease;
+  --accent-color: #5c88c5;
 }
 
 * {
@@ -127,19 +128,23 @@ h2 {
   gap: 1.5rem;
 }
 
-figure {
+/* Temple card styling */
+.temple-card {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-small);
   background-color: var(--white);
   transition: var(--transition-standard);
+  display: flex;
+  flex-direction: column;
 }
 
-figure:hover {
+.temple-card:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
 }
 
-figure img {
+.temple-card img {
   width: 100%;
   height: auto;
   display: block;
@@ -147,12 +152,39 @@ figure img {
   aspect-ratio: 16/9;
 }
 
-figcaption {
-  padding: 0.8rem;
-  text-align: center;
+.temple-details {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.temple-name {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: var(--primary-color);
-  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.temple-location, .temple-dedicated, .temple-area {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.temple-dedicated span, .temple-area span, .temple-location span {
+  font-weight: bold;
+}
+
+/* Animation for card appearance */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.temple-card {
+  animation: fadeIn 0.5s ease forwards;
 }
 
 /* Footer styling */
