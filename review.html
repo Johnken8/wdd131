@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="description" content="Review submission confirmation">
+    <meta name="author" content="Chukwuebuka Johnkennedy Uche">
+</head>
+<body>
+    <header>
+        <h1>Review Submitted</h1>
+    </header>
+    <main class="confirmation">
+        <div class="confirmation-card">
+            <h2>Thank You!</h2>
+            <p>Your review has been submitted successfully.</p>
+            <div class="stats">
+                <p>You have submitted <span id="review-count">0</span> review(s).</p>
+            </div>
+            <div class="review-details" id="review-details">
+                <!-- Review details will be populated by JavaScript -->
+            </div>
+            <a href="form.html" class="back-btn">Submit Another Review</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> | Chukwuebuka Johnkennedy Uche | WDD 131</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+    <script src="scripts/review.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="description" content="Product review form for customer feedback">
+    <meta name="author" content="Chukwuebuka Johnkennedy Uche">
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html">
+            <div class="form-group">
+                <label for="product">Product Name <span class="required">*</span></label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Overall Rating <span class="required">*</span></label>
+                <div class="rating-container">
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">★</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="installation-date">Date of Installation <span class="required">*</span></label>
+                <input type="date" id="installation-date" name="installation-date" required>
+            </div>
+
+            <div class="form-group">
+                <label>Useful Features</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature1" name="features" value="durability">
+                        <label for="feature1">Durability</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature2" name="features" value="efficiency">
+                        <label for="feature2">Efficiency</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature3" name="features" value="design">
+                        <label for="feature3">Design</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature4" name="features" value="compatibility">
+                        <label for="feature4">Compatibility</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="review">Written Review</label>
+                <textarea id="review" name="review" rows="5" placeholder="Tell us about your experience with this product"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" placeholder="Your name (optional)">
+            </div>
+
+            <div class="form-group submit-group">
+                <input type="submit" value="Submit Review" class="submit-btn">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> | Chukwuebuka Johnkennedy Uche | WDD 131</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+    <script src="scripts/form.js"></script>
+</body>
+</html>
