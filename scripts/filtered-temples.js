@@ -56,14 +56,14 @@ const temples = [
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Additional temples - Updated with alternative image URLs
+  // Additional temples with proper URLs that work with lazy loading
   {
     templeName: "Lagos Nigeria",
     location: "Lagos, Nigeria",
     dedicated: "2023, June, 3",
     area: 12000,
     imageUrl:
-    "images/lagos-nigeria-temple.jpg"
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
   },
   {
     templeName: "Salt Lake City Utah",
@@ -71,7 +71,7 @@ const temples = [
     dedicated: "1893, April, 6",
     area: 253015,
     imageUrl:
-    "images/salt-lake-city-utah-temple.jpg"
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/slc-temple-768168-wallpaper.jpg"
   },
   {
     templeName: "Provo City Center",
@@ -79,7 +79,7 @@ const temples = [
     dedicated: "2016, March, 20",
     area: 85084,
     imageUrl:
-    "images/provo-city-center-temple.jpg"
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-city-center/400x250/provo-city-center-temple-1572517-wallpaper.jpg"
   }
 ];
 
@@ -114,45 +114,62 @@ function createTempleCard(temple) {
 
 // Function to display temples based on filter
 function displayTemples(filter = 'all') {
-  // Clear the temple grid
-  templeGrid.innerHTML = '';
+  // Show loading indicator
+  templeGrid.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
   
-  // Filter temples based on the selected filter
-  let filteredTemples;
-  
-  switch(filter) {
-    case 'old':
-      // Temples built before 1900
-      filteredTemples = temples.filter(temple => {
-        const year = parseInt(temple.dedicated.split(', ')[2]);
-        return year < 1900;
-      });
-      break;
-    case 'new':
-      // Temples built after 2000
-      filteredTemples = temples.filter(temple => {
-        const year = parseInt(temple.dedicated.split(', ')[2]);
-        return year > 2000;
-      });
-      break;
-    case 'large':
-      // Temples larger than 90,000 square feet
-      filteredTemples = temples.filter(temple => temple.area > 90000);
-      break;
-    case 'small':
-      // Temples smaller than 10,000 square feet
-      filteredTemples = temples.filter(temple => temple.area < 10000);
-      break;
-    default:
-      // All temples
-      filteredTemples = temples;
-  }
-  
-  // Create and append temple cards
-  filteredTemples.forEach(temple => {
-    const card = createTempleCard(temple);
-    templeGrid.appendChild(card);
-  });
+  // Use setTimeout to allow the loading indicator to render
+  setTimeout(() => {
+    // Clear the temple grid
+    templeGrid.innerHTML = '';
+    
+    // Filter temples based on the selected filter
+    let filteredTemples;
+    
+    switch(filter) {
+      case 'old':
+        // Temples built before 1900
+        filteredTemples = temples.filter(temple => {
+          const year = parseInt(temple.dedicated.split(', ')[2]);
+          return year < 1900;
+        });
+        break;
+      case 'new':
+        // Temples built after 2000
+        filteredTemples = temples.filter(temple => {
+          const year = parseInt(temple.dedicated.split(', ')[2]);
+          return year > 2000;
+        });
+        break;
+      case 'large':
+        // Temples larger than 90,000 square feet
+        filteredTemples = temples.filter(temple => temple.area > 90000);
+        break;
+      case 'small':
+        // Temples smaller than 10,000 square feet
+        filteredTemples = temples.filter(temple => temple.area < 10000);
+        break;
+      default:
+        // All temples
+        filteredTemples = temples;
+    }
+    
+    // Check if any temples match the filter
+    if (filteredTemples.length === 0) {
+      const noResults = document.createElement('div');
+      noResults.className = 'no-results';
+      noResults.textContent = 'No temples match the selected filter.';
+      templeGrid.appendChild(noResults);
+      return;
+    }
+    
+    // Create and append temple cards
+    filteredTemples.forEach((temple, index) => {
+      const card = createTempleCard(temple);
+      // Add a slight delay to each card for a staggered animation effect
+      card.style.animationDelay = `${index * 0.1}s`;
+      templeGrid.appendChild(card);
+    });
+  }, 300); // Short delay to show loading indicator
 }
 
 // Event listeners for filter buttons
@@ -177,8 +194,19 @@ filterButtons.forEach(button => {
       mainNav.classList.remove('open');
       hamburgerButton.textContent = '≡';
       hamburgerButton.setAttribute('aria-expanded', 'false');
-      hamburgerButton.setAttribute('aria-label', 'Open menu');
+      hamburgerButton.setAttribute('aria-label', 'Menu');
     }
+    
+    // Update page focus for accessibility
+    document.querySelector('h1').focus();
+    // Announce filter change for screen readers
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('role', 'status');
+    announcement.className = 'sr-only';
+    announcement.textContent = `Displaying ${filter} temples`;
+    document.body.appendChild(announcement);
+    setTimeout(() => document.body.removeChild(announcement), 1000);
   });
 });
 
@@ -196,7 +224,7 @@ hamburgerButton.addEventListener('click', function() {
     hamburgerButton.setAttribute('aria-label', 'Close menu');
   } else {
     hamburgerButton.textContent = '≡';
-    hamburgerButton.setAttribute('aria-label', 'Open menu');
+    hamburgerButton.setAttribute('aria-label', 'Menu');
   }
 });
 
@@ -205,8 +233,20 @@ document.addEventListener('click', function(event) {
   if (!event.target.closest('header') && mainNav.classList.contains('open')) {
     mainNav.classList.remove('open');
     hamburgerButton.textContent = '≡';
-    hamburgerButton.setAttribute('aria-label', 'Open menu');
+    hamburgerButton.setAttribute('aria-label', 'Menu');
     hamburgerButton.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Add keyboard accessibility for navigation
+document.addEventListener('keydown', function(event) {
+  // Close menu on Escape key
+  if (event.key === 'Escape' && mainNav.classList.contains('open')) {
+    mainNav.classList.remove('open');
+    hamburgerButton.textContent = '≡';
+    hamburgerButton.setAttribute('aria-label', 'Menu');
+    hamburgerButton.setAttribute('aria-expanded', 'false');
+    hamburgerButton.focus(); // Return focus to the hamburger button
   }
 });
 
@@ -220,5 +260,19 @@ lastModifiedParagraph.textContent = `Last Modified: ${document.lastModified}`;
 
 // Initialize the page with all temples
 document.addEventListener('DOMContentLoaded', function() {
+  // Add skip link for accessibility
+  const skipLink = document.createElement('a');
+  skipLink.href = '#temple-grid';
+  skipLink.className = 'skip-link';
+  skipLink.textContent = 'Skip to content';
+  document.body.insertBefore(skipLink, document.body.firstChild);
+  
+  // Make all interactive elements properly focusable
+  const templeCards = document.querySelectorAll('.temple-card');
+  templeCards.forEach(card => {
+    card.setAttribute('tabindex', '0');
+  });
+  
+  // Display all temples on initial load
   displayTemples('all');
 });
