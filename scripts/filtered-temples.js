@@ -71,7 +71,7 @@ const temples = [
     dedicated: "1893, April, 6",
     area: 253015,
     imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/slc-temple-768168-wallpaper.jpg"
+    "./images/salt-lake-city-utah-temple.jpg"
   },
   {
     templeName: "Provo City Center",
