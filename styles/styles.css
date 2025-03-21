@@ -121,7 +121,6 @@ textarea:focus {
 .star-rating label {
     cursor: pointer;
     color: #ccc;
-    font-size: 2rem;
     padding: 0 5px;
     transition: color 0.3s;
 }
