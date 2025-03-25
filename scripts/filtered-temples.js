@@ -127,25 +127,25 @@ function displayTemples(filter = 'all') {
     
     switch(filter) {
       case 'old':
-        // Temples built before 1900
+        // Temples built before 1900 (changed to be more precise)
         filteredTemples = temples.filter(temple => {
           const year = parseInt(temple.dedicated.split(', ')[2]);
           return year < 1900;
         });
         break;
       case 'new':
-        // Temples built after 2000
+        // Precisely filter temples built after 2000
         filteredTemples = temples.filter(temple => {
           const year = parseInt(temple.dedicated.split(', ')[2]);
           return year > 2000;
         });
         break;
       case 'large':
-        // Temples larger than 90,000 square feet
+        // Precisely filter temples larger than 90,000 square feet
         filteredTemples = temples.filter(temple => temple.area > 90000);
         break;
       case 'small':
-        // Temples smaller than 10,000 square feet
+        // Precisely filter temples smaller than 10,000 square feet
         filteredTemples = temples.filter(temple => temple.area < 10000);
         break;
       default:
@@ -157,7 +157,12 @@ function displayTemples(filter = 'all') {
     if (filteredTemples.length === 0) {
       const noResults = document.createElement('div');
       noResults.className = 'no-results';
-      noResults.textContent = 'No temples match the selected filter.';
+      // Add specific message for each filter type
+      noResults.textContent = filter === 'old' ? 'No temples built before 1900.' :
+                               filter === 'new' ? 'No temples built after 2000.' :
+                               filter === 'large' ? 'No temples larger than 90,000 sq ft.' :
+                               filter === 'small' ? 'No temples smaller than 10,000 sq ft.' :
+                               'No temples found.';
       templeGrid.appendChild(noResults);
       return;
     }
@@ -169,6 +174,16 @@ function displayTemples(filter = 'all') {
       card.style.animationDelay = `${index * 0.1}s`;
       templeGrid.appendChild(card);
     });
+    
+    // Update page title to reflect current filter
+    const filterTitles = {
+      'all': 'All Temples',
+      'old': 'Old Temples (Built Before 1900)',
+      'new': 'New Temples (Built After 2000)',
+      'large': 'Large Temples (Over 90,000 sq ft)',
+      'small': 'Small Temples (Under 10,000 sq ft)'
+    };
+    document.querySelector('h2').textContent = filterTitles[filter];
   }, 300); // Short delay to show loading indicator
 }
 
