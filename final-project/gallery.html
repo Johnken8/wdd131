@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore visual highlights of Nigeria through our curated photo gallery">
+    <title>Nigeria Unveiled | Gallery</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/150x70?text=Nigeria+Unveiled" alt="Nigeria Unveiled Logo">
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Gallery</h1>
+                <p>Explore the visual beauty and cultural diversity of Nigeria</p>
+            </div>
+        </section>
+
+        <section class="gallery-controls">
+            <div class="container">
+                <div class="filter-controls">
+                    <h2>Filter Gallery</h2>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="culture">Culture</button>
+                        <button class="filter-btn" data-filter="landscape">Landscapes</button>
+                        <button class="filter-btn" data-filter="people">People</button>
+                        <button class="filter-btn" data-filter="architecture">Architecture</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Culture Images -->
+                    <div class="gallery-item" data-category="culture">
+                        <img src="https://via.placeholder.com/400x300?text=Nigerian+Festival" alt="Nigerian Cultural Festival" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Cultural Festival</h3>
+                            <p>Annual Durbar Festival in Northern Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="culture">
+                        <img src="https://via.placeholder.com/400x300?text=Traditional+Attire" alt="Traditional Nigerian Attire" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Traditional Attire</h3>
+                            <p>Colorful ceremonial clothing from the Yoruba people</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="culture">
+                        <img src="https://via.placeholder.com/400x300?text=Cultural+Dance" alt="Nigerian Cultural Dance" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Traditional Dance</h3>
+                            <p>Performers during an Igbo cultural celebration</p>
+                        </div>
+                    </div>
+
+                    <!-- Landscape Images -->
+                    <div class="gallery-item" data-category="landscape">
+                        <img src="https://via.placeholder.com/400x300?text=Zuma+Rock" alt="Zuma Rock near Abuja" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Zuma Rock</h3>
+                            <p>Iconic monolith near Abuja, the capital city</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="landscape">
+                        <img src="https://via.placeholder.com/400x300?text=Yankari+Game+Reserve" alt="Yankari Game Reserve" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Yankari Game Reserve</h3>
+                            <p>Wildlife sanctuary in Bauchi State</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="landscape">
+                        <img src="https://via.placeholder.com/400x300?text=Niger+Delta" alt="Niger Delta Region" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Niger Delta</h3>
+                            <p>The biodiverse wetlands of the Niger Delta region</p>
+                        </div>
+                    </div>
+
+                    <!-- People Images -->
+                    <div class="gallery-item" data-category="people">
+                        <img src="https://via.placeholder.com/400x300?text=Market+Scene" alt="Nigerian Market Scene" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Market Scene</h3>
+                            <p>Bustling traditional market in Lagos</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="people">
+                        <img src="https://via.placeholder.com/400x300?text=Fishermen" alt="Nigerian Fishermen" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Fishermen</h3>
+                            <p>Traditional fishing methods on Lake Chad</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="people">
+                        <img src="https://via.placeholder.com/400x300?text=Village+Elders" alt="Nigerian Village Elders" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Village Elders</h3>
+                            <p>Council of elders in a rural community</p>
+                        </div>
+                    </div>
+
+                    <!-- Architecture Images -->
+                    <div class="gallery-item" data-category="architecture">
+                        <img src="https://via.placeholder.com/400x300?text=Great+Mosque+of+Kano" alt="Great Mosque of Kano" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Great Mosque of Kano</h3>
+                            <p>Historic mosque in Kano, Northern Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="architecture">
+                        <img src="https://via.placeholder.com/400x300?text=Benin+City+Walls" alt="Ancient Walls of Benin City" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Benin City Walls</h3>
+                            <p>Historic earthworks and city fortifications</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="architecture">
+                        <img src="https://via.placeholder.com/400x300?text=Modern+Lagos" alt="Modern Architecture in Lagos" loading="lazy">
+                        <div class="image-caption">
+                            <h3>Modern Lagos</h3>
+                            <p>Contemporary buildings in Lagos financial district</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-modal" id="galleryModal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <img id="modalImage" src="" alt="Modal Image">
+                <div class="modal-caption">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-navigation">
+                    <button id="prevImage" aria-label="Previous image">&lt;</button>
+                    <button id="nextImage" aria-label="Next image">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reference.html">References</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Name:</strong> Chukwuebuka Johnkennedy Uche</p>
+                    <p><strong>Email:</strong> ucheebuka162@gmail.com</p>
+                    <p><strong>Location:</strong> Lagos, Nigeria</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Nigeria Unveiled. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

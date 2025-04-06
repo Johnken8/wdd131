@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Nigeria Unveiled - Explore the rich culture, traditions, and natural beauty of Nigeria">
+    <title>Nigeria Unveiled | Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/150x70?text=Nigeria+Unveiled" alt="Nigeria Unveiled Logo">
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Nigeria Unveiled</h1>
+                <p>Discover the rich culture, diverse traditions, and natural beauty of Nigeria</p>
+                <button class="cta-button" id="learnMoreBtn">Learn More</button>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2>About Nigeria</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Nigeria, officially the Federal Republic of Nigeria, is a country in West Africa. It is the most populous country in Africa and the seventh most populous country in the world. Nigeria has a diverse geography, with climates ranging from arid to humid equatorial.</p>
+                        <p>With over 250 ethnic groups and more than 500 distinct languages, Nigeria is a cultural melting pot. The country's rich diversity is reflected in its art, music, literature, and cuisine.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/500x300?text=Nigeria+Map" alt="Map of Nigeria" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights-section">
+            <div class="container">
+                <h2>Highlights of Nigeria</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card" id="culture">
+                        <img src="https://via.placeholder.com/300x200?text=Nigerian+Culture" alt="Nigerian Cultural Festival" loading="lazy">
+                        <h3>Rich Culture</h3>
+                        <p>Nigeria's diverse cultural tapestry features colorful festivals, traditional dances, and ceremonial attire that vary across its many ethnic groups.</p>
+                    </div>
+                    <div class="highlight-card" id="nature">
+                        <img src="https://via.placeholder.com/300x200?text=Nigerian+Landscapes" alt="Nigerian Natural Landscape" loading="lazy">
+                        <h3>Natural Beauty</h3>
+                        <p>From the Sahel savanna in the north to the rainforests in the south, Nigeria boasts diverse ecosystems and breathtaking landscapes.</p>
+                    </div>
+                    <div class="highlight-card" id="cuisine">
+                        <img src="https://via.placeholder.com/300x200?text=Nigerian+Cuisine" alt="Nigerian Food" loading="lazy">
+                        <h3>Delicious Cuisine</h3>
+                        <p>Nigerian cuisine offers a variety of flavors, from the spicy jollof rice to the savory egusi soup, showcasing the country's agricultural abundance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="regions-section">
+            <div class="container">
+                <h2>Regions of Nigeria</h2>
+                <div class="region-selector">
+                    <select id="regionSelect">
+                        <option value="north">Northern Nigeria</option>
+                        <option value="southwest">South Western Nigeria</option>
+                        <option value="southeast">South Eastern Nigeria</option>
+                        <option value="southsouth">South Southern Nigeria</option>
+                    </select>
+                    <button id="exploreRegionBtn">Explore Region</button>
+                </div>
+                <div class="region-info" id="regionInfo">
+                    <h3>Northern Nigeria</h3>
+                    <div class="region-content">
+                        <img src="https://via.placeholder.com/400x300?text=Northern+Nigeria" alt="Northern Nigeria Landscape" loading="lazy">
+                        <div class="region-text">
+                            <p>Northern Nigeria is characterized by its Sahelian climate, historic cities like Kano and Sokoto, and rich Islamic heritage. The region is known for its traditional emirates, colorful durbar festivals, and distinctive architecture.</p>
+                            <ul class="region-features">
+                                <li>Historic walled cities</li>
+                                <li>Traditional Islamic architecture</li>
+                                <li>Durbar festivals</li>
+                                <li>Leather crafts and textile production</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest updates on Nigerian culture, tourism, and events</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="text" id="newsletterName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="newsletterEmail" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+                <div id="subscriptionMessage" class="subscription-message"></div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2>What Visitors Say</h2>
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-slide active">
+                        <p>"My visit to Nigeria was filled with unforgettable experiences. The warm hospitality of the people and the vibrant cultural festivals were the highlights of my trip."</p>
+                        <cite>- Sarah Johnson, Canada</cite>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"The diversity of Nigeria's landscapes amazed me. From the plateaus of Jos to the beaches of Lagos, every region offers something unique."</p>
+                        <cite>- Miguel Rodriguez, Spain</cite>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"Nigerian cuisine is a revelation! The flavors and variety of dishes introduced me to a whole new world of culinary delights."</p>
+                        <cite>- Aisha Diallo, Senegal</cite>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button id="prevTestimonial" aria-label="Previous testimonial">&lt;</button>
+                    <button id="nextTestimonial" aria-label="Next testimonial">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reference.html">References</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Name:</strong> Chukwuebuka Johnkennedy Uche</p>
+                    <p><strong>Email:</strong> ucheebuka162@gmail.com</p>
+                    <p><strong>Location:</strong> Lagos, Nigeria</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Nigeria Unveiled. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

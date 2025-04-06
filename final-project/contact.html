@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Nigeria Unveiled - Send inquiries or provide feedback about Nigerian culture and tourism">
+    <title>Nigeria Unveiled | Contact</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/150x70?text=Nigeria+Unveiled" alt="Nigeria Unveiled Logo">
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Have questions about Nigeria or planning a visit? Get in touch with us!</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                                <span class="error-message" id="fullNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="tourism">Tourism Information</option>
+                                    <option value="feedback">Website Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="subjectError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter</label>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                        <div id="formSubmissionStatus" class="submission-status"></div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-item">
+                            <h3>Address</h3>
+                            <p>Nigeria Tourist Information Center</p>
+                            <p>123 Victoria Island</p>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Email</h3>
+                            <p>ucheebuka162@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Phone</h3>
+                            <p>+234 812 706 0319</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 9am - 5pm</p>
+                            <p>Saturday: 10am - 2pm</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container" id="faqContainer">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is the best time to visit Nigeria?</h3>
+                            <button class="toggle-btn" aria-label="Toggle answer visibility">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The best time to visit Nigeria is during the dry season, which typically runs from November to March. During this period, there is less rainfall, making it easier to explore the country's diverse attractions. However, specific regions might have slightly different climate patterns.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need a visa to visit Nigeria?</h3>
+                            <button class="toggle-btn" aria-label="Toggle answer visibility">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, most foreign nationals require a visa to enter Nigeria. It's advisable to apply for a visa well in advance of your planned trip. Visit the Nigerian Immigration Service website or contact the Nigerian embassy or consulate in your country for specific requirements and application procedures.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are the main languages spoken in Nigeria?</h3>
+                            <button class="toggle-btn" aria-label="Toggle answer visibility">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>English is the official language of Nigeria, but there are over 500 indigenous languages spoken across the country. The major indigenous languages include Hausa, Yoruba, Igbo, and Fulfulde, which are spoken by millions of people in different regions of the country.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What are some must-visit destinations in Nigeria?</h3>
+                            <button class="toggle-btn" aria-label="Toggle answer visibility">+</button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Some popular destinations in Nigeria include Lagos (commercial hub with beaches and vibrant nightlife), Abuja (capital city with modern architecture), Calabar (cultural festivals and pristine beaches), Jos (picturesque plateaus and rock formations), and Obudu Mountain Resort (mountain retreat with breathtaking views).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="previous-queries-section">
+            <div class="container">
+                <h2>Previous Queries</h2>
+                <p>Here are some recent questions we've received from visitors:</p>
+                <div id="previousQueries" class="previous-queries">
+                    <!-- These will be populated by JavaScript from localStorage -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="reference.html">References</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Name:</strong> Chukwuebuka Johnkennedy Uche</p>
+                    <p><strong>Email:</strong> ucheebuka162@gmail.com</p>
+                    <p><strong>Location:</strong> Lagos, Nigeria</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Nigeria Unveiled. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
