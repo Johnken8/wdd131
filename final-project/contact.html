@@ -19,8 +19,28 @@
                     <img src="https://via.placeholder.com/150x70?text=Nigeria+Unveiled" alt="Nigeria Unveiled Logo">
                 </a>
             </div>
+            <!-- User preferences controls -->
+            <div id="userPreferences" class="user-preferences">
+                <div class="preference-item">
+                    <label for="themeToggle" class="toggle-label">
+                        <span>Theme:</span>
+                        <input type="checkbox" id="themeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="preference-item">
+                    <label for="fontSizeSelector">
+                        <span>Text Size:</span>
+                        <select id="fontSizeSelector">
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
             <nav>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -33,15 +53,16 @@
             </nav>
         </div>
     </header>
-
     <main>
+        <!-- Welcome message container -->
+        <div id="welcomeMessage" class="welcome-container"></div>
+
         <section class="page-header">
             <div class="container">
                 <h1>Contact Us</h1>
                 <p>Have questions about Nigeria or planning a visit? Get in touch with us!</p>
             </div>
         </section>
-
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
@@ -82,7 +103,6 @@
                         </form>
                         <div id="formSubmissionStatus" class="submission-status"></div>
                     </div>
-
                     <div class="contact-info">
                         <h2>Contact Information</h2>
                         <div class="info-item">
@@ -109,7 +129,6 @@
                 </div>
             </div>
         </section>
-
         <section class="faq-section">
             <div class="container">
                 <h2>Frequently Asked Questions</h2>
@@ -153,7 +172,6 @@
                 </div>
             </div>
         </section>
-
         <section class="previous-queries-section">
             <div class="container">
                 <h2>Previous Queries</h2>
@@ -163,8 +181,14 @@
                 </div>
             </div>
         </section>
-    </main>
 
+        <!-- Recently viewed pages container -->
+        <section class="recent-section">
+            <div class="container">
+                <div id="recentlyViewed" class="recently-viewed"></div>
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -189,5 +213,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>

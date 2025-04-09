@@ -19,6 +19,26 @@
                     <img src="images/logo.png" alt="Nigeria Unveiled Logo" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'70\' viewBox=\'0 0 150 70\'%3E%3Crect width=\'150\' height=\'70\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'75\' y=\'35\' font-family=\'Arial\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23333333\'%3ENigeria Unveiled%3C/text%3E%3C/svg%3E';">
                 </a>
             </div>
+            <!-- User preferences controls (Added from rough code) -->
+            <div id="userPreferences" class="user-preferences">
+                <div class="preference-item">
+                    <label for="themeToggle" class="toggle-label">
+                        <span>Theme:</span>
+                        <input type="checkbox" id="themeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="preference-item">
+                    <label for="fontSizeSelector">
+                        <span>Text Size:</span>
+                        <select id="fontSizeSelector">
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
             <nav>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span class="bar"></span>
@@ -33,15 +53,16 @@
             </nav>
         </div>
     </header>
-
     <main>
+        <!-- Welcome message container (Added from rough code) -->
+        <div id="welcomeMessage" class="welcome-container"></div>
+
         <section class="page-header">
             <div class="container">
                 <h1>Gallery</h1>
                 <p>Explore the visual beauty and cultural diversity of Nigeria</p>
             </div>
         </section>
-
         <section class="gallery-controls">
             <div class="container">
                 <div class="filter-controls">
@@ -56,7 +77,6 @@
                 </div>
             </div>
         </section>
-
         <section class="gallery-section">
             <div class="container">
                 <div class="gallery-grid" id="galleryGrid">
@@ -82,7 +102,6 @@
                             <p>Performers during an Igbo cultural celebration</p>
                         </div>
                     </div>
-
                     <!-- Landscape Images -->
                     <div class="gallery-item" data-category="landscape">
                         <img src="images/landscape/zuma-rock.jpg" alt="Zuma Rock near Abuja" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'150\' font-family=\'Arial\' font-size=\'18\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23333333\'%3EZuma Rock%3C/text%3E%3C/svg%3E';">
@@ -105,7 +124,6 @@
                             <p>The biodiverse wetlands of the Niger Delta region</p>
                         </div>
                     </div>
-
                     <!-- People Images -->
                     <div class="gallery-item" data-category="people">
                         <img src="images/people/market-scene.jpg" alt="Nigerian Market Scene" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'150\' font-family=\'Arial\' font-size=\'18\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23333333\'%3EMarket Scene%3C/text%3E%3C/svg%3E';">
@@ -128,7 +146,6 @@
                             <p>Council of elders in a rural community</p>
                         </div>
                     </div>
-
                     <!-- Architecture Images -->
                     <div class="gallery-item" data-category="architecture">
                         <img src="images/architecture/mosque-kano.jpg" alt="Great Mosque of Kano" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'150\' font-family=\'Arial\' font-size=\'18\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23333333\'%3EGreat Mosque of Kano%3C/text%3E%3C/svg%3E';">
@@ -154,6 +171,13 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Recently viewed pages container (Added from rough code) -->
+        <section class="recent-section">
+            <div class="container">
+                <div id="recentlyViewed" class="recently-viewed"></div>
+            </div>
+        </section>
 
         <section class="gallery-modal" id="galleryModal">
             <div class="modal-content">
@@ -170,7 +194,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -195,5 +218,8 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Back to top button (Added from rough code) -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>
